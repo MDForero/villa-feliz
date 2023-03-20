@@ -1,0 +1,10 @@
+.fondo{
+    background: url("../public/iglu-interno.jpg") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+}
+
+.bgContacto{
+    background: url("../public/contacto.png") no-repeat;
+    background-size: cover;
+}
