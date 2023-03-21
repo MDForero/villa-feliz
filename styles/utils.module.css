@@ -8,3 +8,18 @@
     background: url("../public/contacto.png") no-repeat;
     background-size: cover;
 }
+
+.bgGlamping{
+    background: url("../public/contacto.png") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+}
+
+.listIcon{
+    list-style-image: url("../public/llamita.png");
+}
+
+.img::after{
+    content: "hola";
+    display: block;
+}

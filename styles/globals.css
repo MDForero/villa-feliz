@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+    .btn-cta {
+        @apply hover:bg-verde-oliva px-2 border-0 rounded-md w-fit bg-verde-hunt text-white font-black text-2xl;
+    }
+}

@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'verde-oliva': '#567D5B',
+        'verde-oliva': '#22577A',
+        "verde-hunt": "#80ED99",
       },
       gridTemplateColumns:{
         "footer":"repeat(auto-fill, minmax(15rem,1fr))",

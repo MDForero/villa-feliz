@@ -92,7 +92,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pr-8 lg:pt-4">
               <div className="lg:max-w-lg">
-                <h2 className="text-base font-semibold leading-7 text-yellow-600">Una escapada perfecta</h2>
+                <h2 className="text-base font-semibold leading-7 text-verde-hunt">Una escapada perfecta</h2>
                 <p className="mt-2 text-3xl font-bold tracking-tight text-verde-oliva sm:text-4xl">experimenta una combinación de lujo y aventura</p>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
                   Bienvenido a Villa Feliz Ecolodge, un lugar donde podrás escapar del bullicio de la ciudad y disfrutar de un ambiente tranquilo y natural. Nos enorgullece ofrecer a nuestros huéspedes una experiencia de hospedaje única en un entorno ecológico y sostenible.
@@ -101,7 +101,7 @@ export default function Home() {
                   {features.map((feature) => (
                     <div key={feature.name} className="relative pl-9">
                       <dt className="inline font-semibold text-verde-oliva">
-                        <feature.icon className="absolute top-1 left-1 h-5 w-5 text-yellow-600" aria-hidden="true" />
+                        <feature.icon className="absolute top-1 left-1 h-5 w-5 text-verde-hunt" aria-hidden="true" />
                         {feature.name}
                       </dt>{' '}
                       <dd className="inline">{feature.description}</dd>
@@ -144,7 +144,7 @@ export default function Home() {
               >
                 {includedFeatures.map((feature) => (
                   <li key={feature} className="flex gap-x-3">
-                    <CheckIcon className="h-6 w-5 flex-none text-yellow-600" aria-hidden="true" />
+                    <CheckIcon className="h-6 w-5 flex-none text-verde-hunt" aria-hidden="true" />
                     {feature}
                   </li>
                 ))}
