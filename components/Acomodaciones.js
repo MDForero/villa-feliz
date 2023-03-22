@@ -11,7 +11,6 @@ const Acomodaciones = ({ item }) => {
                     <div className="border-t-2 border-t-verde-hunt mt-2 pt-2">
                         <ul className="flex flex-wrap justify-evenly my-2">{item.features.map(item => <li className={"mx-4 " + utils.listIcon}>{item}</li>) || ""}</ul>
                         <p>{item.description || ""}</p>
-                        <button className="btn-cta mt-2">Reserva Ya</button>
                     </div>
                 </div>
                 <div className="absolute top-5 left-5 text-3xl font-black bg-verde-oliva">

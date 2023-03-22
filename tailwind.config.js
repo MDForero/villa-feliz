@@ -17,6 +17,9 @@ module.exports = {
       gridTemplateColumns:{
         "footer":"repeat(auto-fill, minmax(15rem,1fr))",
       },
+      screens:{
+        "xsm":"360px"
+      }
     },
   },
   plugins: [],

@@ -23,3 +23,35 @@
     content: "hola";
     display: block;
 }
+.bgCheckout{
+    background: url("../public/IMG-8727.jpg") no-repeat;
+    background-size: cover;
+    background-position-y:70% ;
+}
+
+.bgServices{
+    background: url("../public/contacto.png") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+}
+.decoracion{
+    background: url("../public/decoración.jpg") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+}
+.cena{
+    background: url("../public/cena.jpg") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+}
+.paseo{
+    background: url("../public/paseo.jpg") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+}
+.equitacion{
+    background: url("../public/equitacion.jpg") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+}
+
