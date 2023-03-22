@@ -9,7 +9,8 @@ const Acomodaciones = ({ item }) => {
                 <div className="w-[90%] mx-auto ">
                     <h4 className="text-2xl font-bold text-verde-hunt text-justify">{item.title}</h4>
                     <div className="border-t-2 border-t-verde-hunt mt-2 pt-2">
-                        <ul className="flex flex-wrap justify-evenly my-2">{item.features.map(item => <li className={"mx-4 " + utils.listIcon}>{item}</li>) || ""}</ul>
+                        <ul className="flex flex-wrap justify-evenly my-2">{item.features.map((item, index) => <li key={index
+                        } className={"mx-4 " + utils.listIcon}>{item}</li>) || ""}</ul>
                         <p>{item.description || ""}</p>
                     </div>
                 </div>
