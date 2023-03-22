@@ -40,11 +40,11 @@ const servicios = () => {
             <section className='max-w-screen-2xl'>
                 <h1 className="text-center text-6xl my-6 font-black font-lato">Servicios</h1>
                 <div className='max-w-screen-2xl mx-auto flex flex-col'>
-                    {services.map((item, index) => index % 2 ? <article className={item.bg}>
+                    {services.map((item, index) => index % 2 ? <article className={item.bg} key={index}>
                         <div className='w-full bg-black/40 lg:py-44 xsm:p-6 flex justify-end'><CardServices item={item} /></div>
                     </article>
                         :
-                        <article className={item.bg}>
+                        <article className={item.bg} key={index}>
                             <div className='bg-black/40 lg:py-44 xsm:p-6 w-full '>
                                 <CardServices item={item} />
                             </div>
