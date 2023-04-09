@@ -54,4 +54,27 @@
     background-size: cover;
     background-position-y:60% ;
 }
-
+.nosotros{
+    background: url("../public/nosotros.png") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+}
+.bgquienes{
+    background: url("../public/equitacion.jpg") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+    background-attachment: fixed;
+}
+.bgmision{
+    background: url("../public/IMG-8867.jpg") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+    background-attachment: fixed;
+    
+}
+.bgvision{
+    background: url("../public/nosotros.png") no-repeat;
+    background-size: cover;
+    background-position-y:60% ;
+    background-attachment: fixed;
+}

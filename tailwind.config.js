@@ -15,7 +15,7 @@ module.exports = {
         "verde-hunt": "#80ED99",
       },
       gridTemplateColumns:{
-        "footer":"repeat(auto-fill, minmax(15rem,1fr))",
+        "footer":"repeat(auto-fit, minmax(15rem,1fr))",
       },
       screens:{
         "xsm":"360px"
