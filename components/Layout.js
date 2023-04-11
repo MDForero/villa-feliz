@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
     const router = useRouter()
     return (
         <>
-            <Disclosure as="nav" className="bg-verde-oliva sticky">
+            <Disclosure as="nav" className="bg-verde-oliva">
                 {({ open }) => (
                     <>
                         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
                                                     href={item.href}
                                                     className={classNames(
                                                         router.pathname === item.href ? 'bg-gray-900 text-white text-xl' : router.pathname.slice(1).includes(item.href) ? 'bg-gray-900 text-white text-xl' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                        'rounded-md px-3 py-2 text-sm font-black'
+                                                        'rounded-md px-3 py-2 xsm:text-lg lg:text-2xl font-black'
                                                     )}
                                                     aria-current={item.current ? 'page' : undefined}
                                                 >
@@ -97,12 +97,17 @@ const Layout = ({ children }) => {
             </Disclosure>
             <div className='max-w-screen-2xl mx-auto'>
                 {children}
-                
+
             </div>
             <footer className='bg-verde-oliva py-[30px]'>
-                <div className='grid grid-cols-footer gap-[1rem] max-w-screen-2xl mx-auto px-[10px]'>
+                <div className='grid grid-cols-footer gap-[1rem] max-w-screen-2xl mx-auto px-[10px] text-white'>
                     <div className=''>
-                        <h3 className='text-center'>Siguenos</h3>
+                        <h3 className='text-center'>Contacto</h3>
+                        <ul className='text-justify'>
+                            <li>Estamos ubicados en un bello municipio del piedemonte llanero “MONTERREY CASANARE” a 7 kilómetros del casco urbano, con vía de acceso completamente pavimentada.</li>
+                            <li><a href="tel:+573219539256">3219539256</a></li>
+                            <li><a href="mailto:villafelizeco@gmail.com">villafelizeco@gmail.com</a></li>
+                        </ul>
                         <ul className='list-none flex flex-wrap justify-evenly text-4xl my-[5px]'>
                             <li><a href="https://www.facebook.com/people/VILLA-FELIZ-Ecolodge/100086444870481/" target="_blank"><FontAwesomeIcon icon={faFacebook} /></a></li>
                             <li><a href="https://www.instagram.com/villafeliz_ecolodge/" target="_blank"><FontAwesomeIcon icon={faInstagram} /></a></li>
@@ -112,18 +117,15 @@ const Layout = ({ children }) => {
                     <div className=''>
                         <h3 className='text-center'>Links</h3>
                         <ul className='grid place-content-center'>
-                            <li><Link href="#">Inicio</Link></li>
-                            <li><Link href="#">Glamping</Link></li>
-                            <li><Link href="#">Contacto</Link></li>
-                            <li><Link href="#">Nosotros</Link></li>
-                            <li><Link href="#">Políticas</Link></li>
+                            {navigation.map(item => <li><Link href={item.href}>{item.name}</Link></li>)}
                         </ul>
                     </div>
                     <div className=''>
                         <h3 className='text-center'>Términos y condiciones</h3>
                         <ul className='grid place-content-center'>
-                            <li><Link href="#">Cancelación</Link></li>
-                            <li><Link href="#">Reservas</Link></li>
+                            <li><Link href="terminos_y_condiciones">Términos y condiciones</Link></li>
+                            <li><Link href="declaracion_de_riesgos">Declaración de riesgos</Link></li>
+                            <li><Link href="reglamentos">Reglamentos</Link></li>
                         </ul>
                     </div>
                     <div className=''>
@@ -134,14 +136,6 @@ const Layout = ({ children }) => {
                             <dt>Check-Out</dt>
                             <dd className='ml-[15px]'>El horario de check out se debe hacer antes de la 1 de la tarde</dd>
                         </dl>
-                    </div>
-                    <div className=''>
-                        <h3 className='text-center'>Contacto</h3>
-                        <ul className='text-justify'>
-                            <li>Estamos ubicados en un bello municipio del piedemonte llanero “MONTERREY CASANARE” a 7 kilómetros del casco urbano, con vía de acceso completamente pavimentada.</li>
-                            <li><a href="tel:+573219539256">3219539256</a></li>
-                            <li><a href="mailto:villafelizeco@gmail.com">villafelizeco@gmail.com</a></li>
-                        </ul>
                     </div>
                 </div>
             </footer>
