@@ -27,7 +27,7 @@ const nosotros = () => {
         <Layout>
             <BannerLogo bg={utils.nosotros} />
             <section className="max-w-screen m-auto">
-            {data.map(item=> <Nosotros item={item}/>)}
+            {data.map((item, index)=> <Nosotros key={index} item={item}/>)}
             </section>
         </Layout>
     )

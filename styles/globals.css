@@ -19,4 +19,9 @@
     body {
         text-align: justify;
     }
+    a:hover {
+        color: #80ED99;
+        transition: 0.3s;
+        font-weight: 800;
+    }
 }

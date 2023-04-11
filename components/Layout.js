@@ -117,7 +117,7 @@ const Layout = ({ children }) => {
                     <div className=''>
                         <h3 className='text-center'>Links</h3>
                         <ul className='grid place-content-center'>
-                            {navigation.map(item => <li><Link href={item.href}>{item.name}</Link></li>)}
+                            {navigation.map((item, index )=> <li key={index}><Link href={item.href}>{item.name}</Link></li>)}
                         </ul>
                     </div>
                     <div className=''>
