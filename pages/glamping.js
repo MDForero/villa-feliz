@@ -1,4 +1,3 @@
-import BannerLogo from "@/components/BannerLogo"
 import Layout from "@/components/Layout"
 import Image from "next/image"
 import bg from "../styles/utils.module.css"
@@ -9,6 +8,8 @@ import Head from "next/head"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
 import Logos from "@/components/Logos"
+import { useState } from "react"
+import BannerLogo from "@/components/BannerLogo"
 
 
 const acomodaciones = [
@@ -29,6 +30,48 @@ const acomodaciones = [
 ]
 
 const glamping = () => {
+    const date = new Date
+    const [checkin, setCheckin] = useState("");
+    const [checkout, setCheckout] = useState("");
+    const [minOut, setMinOut]=useState("")
+    const [stayDays, setStayDays] = useState([]);
+
+    const handleCheckinChange = (event) => {
+        const selectedDate = event.target.value;
+        setCheckin(selectedDate);
+        const nextDay = new Date(selectedDate);
+        nextDay.setDate(nextDay.getDate() + 1);
+        setMinOut(nextDay.toISOString().slice(0, 10));
+    };
+
+    const handleCheckoutChange = (event) => {
+        const selectedDate = event.target.value;
+        setCheckout(selectedDate);
+        const dateList = getDateList(checkin, selectedDate);
+        setStayDays(dateList);
+    };
+
+    const getDateList = (startDate, endDate) => {
+        const dateList = [];
+        let currentDate = new Date(startDate);
+        currentDate.setDate(currentDate.getDate() + 1)
+        const options = { weekday: 'long' };
+        while (currentDate <= new Date(endDate)) {
+            dateList.push(currentDate.toLocaleDateString('es-ES', options));
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+        costBooking(dateList)
+    };
+
+    const costBooking = (listDays) => {
+        const week =  ["lunes", "martes","miércoles","jueves"]
+        let cost = 0
+        for (let index = 0; index < listDays.length - 1; index++) {
+            week.includes(listDays[index]) ? cost += 220000 : cost += 250000
+        }
+        console.log(cost)
+    }
+
     return (
         <Layout>
             <Head>
@@ -42,7 +85,7 @@ const glamping = () => {
                     <p className="text-gray-600 max-w-[700px] text-center mx-auto my-2">Nuestros  glampings cuentan con diseños amigables con la naturaleza, en un entorno verde, ubicados junto a los árboles nativos.  Están construidos en maderas reforestadas y vidrio para disfrutar permanentemente del paisaje.</p>
                 </div>
                 <div className="flex flex-wrap justify-evenly">
-                    {acomodaciones.map((item, index)=> <Acomodaciones item={item} key={index} />)}
+                    {acomodaciones.map((item, index) => <Acomodaciones item={item} key={index} />)}
                 </div>
             </section>
             <section className={"max-w-screen-7xl " + bg.bgCheckout}>
@@ -62,34 +105,22 @@ const glamping = () => {
                         <div className="h-[90%] w-[400px] border-2 bg-slate-100/80 p-4 text-center text-xl ">
                             <h4>Glamping</h4>
                             <h1>Formulario de reserva glampings</h1>
-                            <form className="">
+                            <form className="" method="get" action="/checkout">
                                 <div className="grid md:grid-cols-2 md:gap-6 mt-4">
                                     <div className="relative z-0 w-full mb-6 group">
                                         <h4>Check-in</h4>
-                                        <input type="date" name="floating_first_name" id="floating_first_name" className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                        <label for="floating_first_name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
+                                        <input type="date" name="checkIn" id="checkIn" min={date.toISOString().slice(0, date.toISOString().indexOf("T"))} onChange={handleCheckinChange} value={checkin} className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                                        <label for="checkIn" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
                                     </div>
                                     <div className="relative z-0 w-full mb-6 group">
                                         <h4>Check-out</h4>
-                                        <input type="date" name="floating_last_name" id="floating_last_name" className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                        <label for="floating_last_name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
+                                        <input type="date" name="checkOut" id="checkOut" min={minOut} value={checkout} onChange={handleCheckoutChange} className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                                        <label for="checkOut" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
                                     </div>
                                 </div>
                                 <div className="grid md:grid-cols-2 md:gap-6 mt-4">
                                     <div className="relative z-0 w-full mb-6 group">
                                         <h4>Adultos</h4>
-                                        <div className="flex justify-center">
-                                            <div className="mb-3 xl:w-96">
-                                                <select data-te-select-init className="text-md">
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="relative z-0 w-full mb-6 group">
-                                        <h4>Niños</h4>
                                         <div className="flex justify-center">
                                             <div className="mb-3 xl:w-96">
                                                 <select data-te-select-init className="text-md">
@@ -101,15 +132,16 @@ const glamping = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="relative z-0 w-full mb-6 js text-center">
-                                    <h4>Distribución</h4>
-                                    <div className="flex justify-center">
-                                        <div className="mb-3 xl:w-96">
-                                            <select data-te-select-init>
-                                                <option value="Ajila">Ajila</option>
-                                                <option value="Pasaje">Pasaje</option>
-                                            </select>
+
+                                    <div className="relative z-0 w-full mb-6 js text-center">
+                                        <h4>Distribución</h4>
+                                        <div className="flex justify-center">
+                                            <div className="mb-3 xl:w-96">
+                                                <select data-te-select-init name="description">
+                                                    <option value="Ajila">Ajila</option>
+                                                    <option value="Pasaje">Pasaje</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
