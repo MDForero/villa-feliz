@@ -29,7 +29,7 @@ const acomodaciones = [
     }
 ]
 
-const glamping = () => {
+const Glamping = () => {
     const date = new Date
     const [cost, setCost] = useState(0)
     const [checkin, setCheckin] = useState("");
@@ -177,4 +177,4 @@ const glamping = () => {
     )
 }
 
-export default glamping
+export default Glamping
