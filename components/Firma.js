@@ -23,7 +23,7 @@ const Firma = ({ amount, reference, currency, merchantId }) => {
         });
 
     return (
-        <input value={firma} hidden name='signature' />
+        <input value={firma} readOnly hidden name='signature' />
     )
 }
 

@@ -22,8 +22,8 @@ const Galeria = () => {
             <ImageList
                 variant="masonry" cols={5} gap={8}
             >
-                {itemData.map((item) => (
-                    <ImageListItem key={item}>
+                {itemData.map((item, index) => (
+                    <ImageListItem key={index}>
                         <Image
                             src={item}
                             alt="prueba"
