@@ -12,7 +12,7 @@ const merchantId = process.env.NEXT_PUBLIC_MERCHANT_ID
 
 
 
-const checkout = () => {
+const Checkout = () => {
     let reference
     let signature
     const router = useRouter()
@@ -314,4 +314,4 @@ const checkout = () => {
     )
 }
 
-export default checkout
+export default Checkout
