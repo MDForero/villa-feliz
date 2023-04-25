@@ -1,8 +1,8 @@
 const Video = () => {
   return (
-    <div>
-        <video src={require("../public/video.mp4")} width={320} height={320}/>
-    </div>
+      <video autoPlay loop muted className="w-full rounded-xl">
+        <source src={require("../public/ANATO 2023 .mp4")} />
+      </video>
   )
 }
 

@@ -12,6 +12,8 @@ import Head from 'next/head'
 import Galeria from '@/components/Galeria'
 import Logos from '@/components/Logos'
 import BannerLogo from '@/components/BannerLogo'
+import anato from "../public/ANATO 2023 .mp4"
+import Video from '@/components/Video'
 
 const includedFeatures = [
   "Desayuno:(3 opciones: típico, suramericano, liviano o vegetariano).",
@@ -111,12 +113,7 @@ export default function Home() {
               </div>
             </div>
             <div className='w-full h-full'>
-              <Image
-                src={fotoPanoramica}
-                alt="Product screenshot"
-                className="object-cover max-h-full w-full rounded-xl"
-                height={350}
-              />
+              <Video/>
             </div>
           </div>
         </div>
@@ -155,7 +152,8 @@ export default function Home() {
                 <div className="mx-auto max-w-xs px-8">
                   <p className="text-base font-semibold text-gray-600"></p>
                   <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                    <span className="text-5xl font-bold tracking-tight text-gray-900">$350.000</span>
+                    <span className="text-5xl font-bold tracking-tight text-gray-900">$220.000</span>
+                    <span className="text-5xl font-bold tracking-tight text-gray-900">-$250.000</span>
                     <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">COP</span>
                   </p>
                   <a

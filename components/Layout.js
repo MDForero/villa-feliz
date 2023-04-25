@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
@@ -22,9 +22,25 @@ function classNames(...classes) {
 
 const Layout = ({ children }) => {
     const router = useRouter()
+    const [fixed, setFixed] = useState("bg-transparent absolute z-50 w-full")
+
+    useEffect(() => {
+        function handleScroll() {
+            if (window.scrollY > 300) {
+                setFixed('bg-verde-oliva fixed w-full z-50');
+            } else {
+                setFixed("bg-transparent absolute z-50 w-full")
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <>
-            <Disclosure as="nav" className="bg-verde-oliva">
+            <Disclosure as="nav" className={fixed}>
                 {({ open }) => (
                     <>
                         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -117,7 +133,7 @@ const Layout = ({ children }) => {
                     <div className=''>
                         <h3 className='text-center'>Links</h3>
                         <ul className='grid place-content-center'>
-                            {navigation.map((item, index )=> <li key={index}><Link href={item.href}>{item.name}</Link></li>)}
+                            {navigation.map((item, index) => <li key={index}><Link href={item.href}>{item.name}</Link></li>)}
                         </ul>
                     </div>
                     <div className=''>
