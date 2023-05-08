@@ -6,6 +6,7 @@ import decoracion from "../public/decoración.jpg"
 import cena from "../public/cena.jpg"
 import paseo from "../public/paseo.jpg"
 import equitacion from "../public/equitacion.jpg"
+import Head from 'next/head'
 
 const services = [
     {
@@ -36,6 +37,9 @@ const services = [
 const servicios = () => {
     return (
         <Layout>
+            <Head>
+                <title>Servicios</title>
+            </Head>
             <BannerLogo bg={utilStyle.bgServices} />
             <section className='max-w-screen-2xl'>
                 <h1 className="text-center text-6xl my-6 font-black font-lato">Servicios</h1>

@@ -3,6 +3,7 @@ import Layout from "@/components/Layout"
 import Nosotros from "@/components/Nosotros"
 import { Description } from "@mui/icons-material"
 import utils from "../styles/utils.module.css"
+import Head from "next/head"
 
 const data = [
     {
@@ -25,6 +26,9 @@ const data = [
 const nosotros = () => {
     return (
         <Layout>
+            <Head>
+                <title>Nosotros</title>
+            </Head>
             <BannerLogo bg={utils.nosotros} />
             <section className="max-w-screen m-auto">
             {data.map((item, index)=> <Nosotros key={index} item={item}/>)}

@@ -9,7 +9,7 @@ const Firma = ({ amount, reference, currency, merchantId }) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ amount, currency, referenceCode, merchantId })
         };
-        const response = await fetch('http://localhost:8000/generate-md5', requestOptions);
+        const response = await fetch('https://apis.dadisoluciones.com/generate-md5', requestOptions);
         const data = await response.json();
         return data.hash;
     }

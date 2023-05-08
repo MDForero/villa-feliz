@@ -76,7 +76,7 @@ const Glamping = () => {
     return (
         <Layout>
             <Head>
-                <title>Glampings de villa feliz</title>
+                <title>Glampings</title>
             </Head>
             <BannerLogo bg={bg.bgGlamping} />
             <section className="max-w-7xl mx-auto">
