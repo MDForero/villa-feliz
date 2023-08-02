@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-cta {
+        @apply hover: bg-verde-oliva px-2 border-0 rounded-md w-fit bg-verde-hunt text-white font-black text-2xl;
+    }
+
+    footer h3 {
+        font-weight: 900;
+        font-size: 1.7rem;
+        font-family: "Lato";
+        padding: 5px 0px;
+    }
+
+    footer dt {
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    body {
+        text-align: justify;
+    }
+
+    a:hover {
+        color: #80ED99;
+        transition: 0.3s;
+        font-weight: 800;
+    }
+}
+
+.fondo {
+    background: url("../public/iglu-interno.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.bgContacto {
+    background: url("../public/contacto.png") no-repeat;
+    background-size: cover;
+}
+
+.bgGlamping {
+    background: url("../public/contacto.png") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.listIcon {
+    list-style-image: url("../public/llamita.png");
+}
+
+.img::after {
+    content: "hola";
+    display: block;
+}
+
+.bgCheckout {
+    background: url("../public/IMG-8727.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 70%;
+}
+
+.bgServices {
+    background: url("../public/contacto.png") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.decoracion {
+    background: url("../public/decoración.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.cena {
+    background: url("../public/cena.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.paseo {
+    background: url("../public/paseo.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.equitacion {
+    background: url("../public/equitacion.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.nosotros {
+    background: url("../public/nosotros.png") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.bgquienes {
+    background: url("../public/equitacion.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    background-attachment: fixed;
+}
+
+.bgmision {
+    background: url("../public/IMG-8867.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    background-attachment: fixed;
+
+}
+
+.bgvision {
+    background: url("../public/nosotros.png") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    background-attachment: fixed;
+}
+
+.fondo {
+    background: url("../public/iglu-interno.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.bgContacto {
+    background: url("../public/contacto.png") no-repeat;
+    background-size: cover;
+}
+
+.bgGlamping {
+    background: url("../public/contacto.png") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.listIcon {
+    list-style-image: url("../public/llamita.png");
+}
+
+.img::after {
+    content: "hola";
+    display: block;
+}
+
+.bgCheckout {
+    background: url("../public/IMG-8727.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 70%;
+}
+
+.bgServices {
+    background: url("../public/contacto.png") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.decoracion {
+    background: url("../public/decoración.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.cena {
+    background: url("../public/cena.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.paseo {
+    background: url("../public/paseo.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.equitacion {
+    background: url("../public/equitacion.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.nosotros {
+    background: url("../public/nosotros.png") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+.bgquienes {
+    background: url("../public/equitacion.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    background-attachment: fixed;
+}
+
+.bgmision {
+    background: url("../public/IMG-8867.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    background-attachment: fixed;
+
+}
+
+.bgvision {
+    background: url("../public/nosotros.png") no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    background-attachment: fixed;
+}
