@@ -7,11 +7,11 @@ import Image from "next/image"
 
 const Logos = () => {
     return (
-        <div className='flex max-w-[800px] mx-auto flex-wrap h-fit justify-evenly mt-[50px]'>
-            <Image src={sena} height={100} alt="logo del sena" />
-            <Image src={emprender} height={100} alt="logo fondo emprender" />
-            <Image src={monterrey} height={100} alt="logo alcaldía de Monterrey" />
-            <Image src={colombia} height={100} alt="logo de la republica de Colombia" />
+        <div className='md:grid md:grid-cols-5 grid-cols-3 flex flex-wrap max-w-[800px] w-full gap-2 items-center  mx-auto  h-[100px] justify-evenly pt-12 mb-[50px]'>
+            <Image src={sena} height={0} alt="logo del sena" className="md:order-1 h-full object-cover w-fit md:h-32"/>
+            <Image src={monterrey} height={0} alt="logo alcaldía de Monterrey"className="md:order-3 h-full object-cover w-fit md:h-32" />
+            <Image src={colombia} height={0} alt="logo de la republica de Colombia" className="md:order-4 h-full object-cover w-fit md:h-32"/>
+            <Image src={emprender} height={0} alt="logo fondo emprender" className="md:order-2 md:col-span-2 col-span-3 h-full object-cover w-fit md:h-32"/>
         </div>
     )
 }

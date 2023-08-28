@@ -9,13 +9,14 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { usePathname } from 'next/navigation'
+import path from "path"
 
 const navigation = [
-    { name: 'Inicio', href: '/', current: false },
-    { name: 'Servicios', href: '/servicios', current: false },
-    { name: 'Glamping', href: '/glamping', current: false },
-    { name: 'Nosotros', href: '/nosotros', current: false },
-    { name: 'Contacto', href: '/contacto', current: false },
+    { name: 'inicio', href: '/', current: false },
+    { name: 'servicios', href: '/servicios', current: false },
+    { name: 'glamping', href: '/glamping', current: false },
+    { name: 'nosotros', href: '/nosotros', current: false },
+    { name: 'contacto', href: '/contacto', current: false },
 ]
 
 function classNames(...classes) {
@@ -23,14 +24,14 @@ function classNames(...classes) {
 }
 
 const RootLayout = ({ children }) => {
-    const [fixed, setFixed] = useState("bg-transparent absolute z-50 w-full")
+    const [fixed, setFixed] = useState("md:bg-transparent bg-blueSea absolute z-50 w-full")
     const pathName = usePathname()
     useEffect(() => {
         function handleScroll() {
             if (window.scrollY > 300) {
-                setFixed('bg-verde-oliva fixed w-full z-50');
+                setFixed('bg-blueSea fixed w-full z-50');
             } else {
-                setFixed("bg-transparent absolute z-50 w-full")
+                setFixed("md:bg-transparent bg-blueSea  absolute z-50 w-full")
             }
         }
         window.addEventListener('scroll', handleScroll);
@@ -38,6 +39,7 @@ const RootLayout = ({ children }) => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+    
 
     return (
         <html>
@@ -73,15 +75,16 @@ const RootLayout = ({ children }) => {
                                             />
                                         </div>
                                         <div className="hidden sm:ml-6 sm:block">
-                                            <div className="flex space-x-6">
+                                            <div className="flex space-x-6 ">
                                                 {navigation.map((item) => {
+                                                    
                                                     return (
                                                         <Link
                                                             key={item.name}
                                                             href={item.href}
                                                             className={classNames(
-                                                                pathName === item.href ? 'bg-gray-900 text-white text-xl' : pathName.slice(1).includes(item.href) ? 'bg-gray-900 text-white text-xl' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                                'rounded-md px-3 py-2 xsm:text-lg lg:text-2xl font-black'
+                                                                pathName.slice(1,-1) === item.href.slice(1) ? 'bg-gray-900 text-white text-xl' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                                'rounded-md px-3 py-2 xsm:text-lg lg:text-2xl font-black first-letter:capitalize'
                                                             )}
                                                             aria-current={item.current ? 'page' : undefined}
                                                         >
@@ -104,7 +107,7 @@ const RootLayout = ({ children }) => {
                                             href={item.href}
                                             className={classNames(
                                                 item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                'block rounded-md px-3 py-2 text-base font-medium'
+                                                'block rounded-md px-3 py-2 text-base font-medium first-letter:capitalize'
                                             )}
                                             aria-current={item.current ? 'page' : undefined}
                                         >
@@ -118,9 +121,9 @@ const RootLayout = ({ children }) => {
                 </Disclosure>
                 <div className='max-w-screen-2xl mx-auto'>
                     {children}
-
+                        <a href="https://api.whatsapp.com/send?phone=573219539256&text=Hola%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20Villa%20Feliz%20Eco%20Glamping" className='fixed bottom-0 right-0 z-50 bg-blueSea text-white p-2 rounded-s-full text-2xl' target="_blank"><FontAwesomeIcon icon={faWhatsapp} size='2x'/></a>
                 </div>
-                <footer className='bg-verde-oliva py-[30px]'>
+                <footer className='bg-blueSea py-[30px]'>
                     <div className='grid grid-cols-footer gap-[1rem] max-w-screen-2xl mx-auto px-[10px] text-white'>
                         <div className=''>
                             <h3 className='text-center'>Contacto</h3>

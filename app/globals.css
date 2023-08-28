@@ -4,7 +4,7 @@
 
 @layer components {
     .btn-cta {
-        @apply hover: bg-verde-oliva px-2 border-0 rounded-md w-fit bg-verde-hunt text-white font-black text-2xl;
+        @apply hover: bg-blueSea px-2 border-0 rounded-md w-fit bg-verde-hunt text-white font-black text-2xl;
     }
 
     footer h3 {
@@ -31,13 +31,13 @@
 }
 
 .fondo {
-    background: url("../public/iglu-interno.jpg") no-repeat;
+    background: url("../public/seccionservicios.jpg") no-repeat;
     background-size: cover;
     background-position-y: 60%;
 }
 
 .bgContacto {
-    background: url("../public/contacto.png") no-repeat;
+    background: url("../public/seccioncontacto.JPG") no-repeat;
     background-size: cover;
 }
 
@@ -120,19 +120,15 @@
     background-attachment: fixed;
 }
 
-.fondo {
-    background: url("../public/iglu-interno.jpg") no-repeat;
-    background-size: cover;
-    background-position-y: 60%;
-}
 
 .bgContacto {
-    background: url("../public/contacto.png") no-repeat;
+    background: url("../public/seccioncontacto.JPG") no-repeat;
+    background-position: bottom;
     background-size: cover;
 }
 
 .bgGlamping {
-    background: url("../public/contacto.png") no-repeat;
+    background: url("../public/seccionglamping.JPG") no-repeat;
     background-size: cover;
     background-position-y: 60%;
 }

@@ -45,14 +45,10 @@ const servicios = () => {
         <div>
             <BannerLogo bg={'bgServices'} />
             <section className='max-w-screen-2xl'>
-                <h1 className="text-center text-6xl my-6 font-black font-lato">Servicios</h1>
                 <div className='max-w-screen-2xl mx-auto flex flex-col'>
-                    {services.map((item, index) => index % 2 ? <article className={item.bg} key={index}>
-                        <div className='w-full bg-black/40 lg:py-44 xsm:p-6 flex justify-end'><CardServices item={item} /></div>
-                    </article>
-                        :
-                        <article className={item.bg} key={index}>
-                            <div className='bg-black/40 lg:py-44 xsm:p-6 w-full '>
+                    {services.map((item, index) => <article className={" relative " } key={index}>
+                            <div className={item.bg + ' absolute top-0 bottom-0 left-0 right-0 blur-sm'}></div>
+                            <div className='bg-black/40 blur-none lg:py-44 xsm:p-6 w-full '>
                                 <CardServices item={item} />
                             </div>
                         </article>)}
