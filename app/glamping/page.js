@@ -5,7 +5,6 @@ import Acomodaciones from "@/components/Acomodaciones"
 import Head from "next/head"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
-import Logos from "@/components/Logos"
 import BannerLogo from "@/components/BannerLogo"
 import  { Plataformas } from "@/components/Plataformas"
 
@@ -68,7 +67,6 @@ const Glamping = () => {
                     </div>
                 </div>
             </section>
-            <Logos />
         </div>
     )
 }

@@ -3,7 +3,6 @@ import iglu from "../public/iglu-interno.jpg"
 import logo from "../public/logo.png"
 import Image from 'next/image'
 import fotoPanoramica from "../public/IMG-8815.jpg"
-import Logos from '@/components/Logos'
 import BannerLogo from '@/components/BannerLogo'
 import Script from 'next/script'
 import { contacto } from './data'
@@ -69,7 +68,7 @@ export default function Home() {
         <div className="relative isolate">
           <div className='mb-32 lg:mb-0 '>
             <video className='w-full  object-cover  h-[400px] xl:h-[600px]' autoPlay loop muted>
-              <source src='/video.mp4' type='video/mp4' />
+              <source src='/villafeliz.mp4' type='video/mp4'  />
             </video>
             <div className='absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center'>
             <Image src="/logo.png" width={0} height={0} alt="logo"  objectFit="cover" className="w-24 h-24 md:w-40 md:h-40 bg-blue-950/70 rounded-full  object-cover" />
@@ -104,7 +103,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Logos />
       {/* caracteristicas */}
       <div className="overflow-hidden bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
