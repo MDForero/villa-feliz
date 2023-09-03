@@ -60,7 +60,7 @@ const Booking = () => {
     return (
         <div className="w-full absolute -bottom-32  lg:bottom-0 py-2">
             <form className="max-w-5xl mx-auto bg-gray-100/80 p-3" method="get" action="/checkout">
-                <div className="flex lg:flex-row flex-col gap-5 items-center justify-center">
+                <div className="flex md:flex-row flex-col gap-5 items-center justify-center">
                     <div className="flex flex-row gap-2">
                         <div className="relative z-0 w-full p-3 rounded-2xl border-2 border-blueSea group">
                             <input
